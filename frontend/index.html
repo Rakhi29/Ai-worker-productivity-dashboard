@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Factory Productivity Dashboard</title>
+<script>
+async function loadMetrics(){
+    const res = await fetch("http://localhost:8000/metrics");
+    const data = await res.json();
+    document.getElementById("output").innerText =
+        JSON.stringify(data, null, 2);
+}
+</script>
+</head>
+<body onload="loadMetrics()">
+<h1>AI Worker Productivity Dashboard</h1>
+<pre id="output"></pre>
+</body>
+</html>
